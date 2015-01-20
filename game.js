@@ -1,6 +1,6 @@
 /*
  * Author - Kyle Corry
-*/
+ */
 
 var c = document.getElementById("game");
 var ctx = c.getContext("2d");
@@ -254,8 +254,11 @@ var wallCollision = function () {
         x = 0;
     } else if (x > width - blockSize) {
         x = width - blockSize;
-    } else if (y < 0) {
-        y = 0;
+    } else if (y < jump) {
+        if (!gameOver) {
+            alert('You Win!');
+            gameOver = true;
+        }
     } else if (y > height - blockSize) {
         y = height - blockSize;
     }
