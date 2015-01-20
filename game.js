@@ -118,7 +118,7 @@ var drawBackground = function () {
     // Water
     ctx.fillStyle = blue;
     ctx.fillRect(0, 100, width, 2 * blockSize);
-    ctx.fillText("Water Games!", width / 2 - "Water Games!".length * 5, 120 + blockSize + jump);
+    ctx.fillText("Water Game!", width / 2 - "Water Game!".length * 5, 120 + blockSize + jump);
     // Gongolier
     ctx.drawImage(gongolier, width / 2 - gongolier.width / 2, 25);
     //chieftain
