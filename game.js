@@ -99,9 +99,9 @@ var gameLoop = function () {
         } else if (key == 80) {
             gamePaused = true;
         }
-    }
+    };
     wallCollision();
-}
+};
 
 var drawBackground = function () {
     // Road 1
@@ -126,14 +126,14 @@ var drawBackground = function () {
     ctx.drawImage(chief, width - 100, height - 35);
     //frc
     ctx.drawImage(frc, width / 2 - frc.width / 2, 325);
-}
+};
 
 var drawObjects = function () {
     //Gondola
     ctx.drawImage(gondola, gondolaXs[0], gondolaY);
     ctx.drawImage(gondola, gondolaXs[1], gondolaY);
     // Robot
-    ctx.drawImage(robot, x, y)
+    ctx.drawImage(robot, x, y);
     // Gondola Movement
     gondolaMoving();
 
@@ -166,7 +166,7 @@ var drawObjects = function () {
     // car movement
     topLeftMove();
 
-}
+};
 
 var topLeftMove = function () {
     for (var i = 0; i < topLeftXs.length; i++) {
@@ -180,7 +180,7 @@ var topLeftMove = function () {
             gameOver = true;
         }
     }
-}
+};
 
 var topRightMove = function () {
     for (var i = 0; i < topRightXs.length; i++) {
@@ -194,7 +194,7 @@ var topRightMove = function () {
             gameOver = true;
         }
     }
-}
+};
 
 var btmLeftMove = function () {
     for (var i = 0; i < btmLeftXs.length; i++) {
@@ -208,7 +208,7 @@ var btmLeftMove = function () {
             gameOver = true;
         }
     }
-}
+};
 
 var btmRightMove = function () {
     for (var i = 0; i < btmRightXs.length; i++) {
@@ -222,7 +222,7 @@ var btmRightMove = function () {
             gameOver = true;
         }
     }
-}
+};
 
 var gondolaMoving = function () {
     for (var i = 0; i < gondolaXs.length; i++) {
@@ -247,7 +247,7 @@ var gondolaMoving = function () {
     } else {
         riding = false;
     }
-}
+};
 
 var wallCollision = function () {
     if (x < 0) {
@@ -262,7 +262,7 @@ var wallCollision = function () {
     } else if (y > height - blockSize) {
         y = height - blockSize;
     }
-}
+};
 
 var gamePause = function () {
     ctx.clearRect(0, 0, width, height);
@@ -277,8 +277,8 @@ var gamePause = function () {
             clearInterval(intervalId);
             intervalId = setInterval(gameLoop, 1000 / fps);
         }
-    }
-}
+    };
+};
 
 var gameEnd = function () {
     ctx.clearRect(0, 0, width, height);
@@ -292,7 +292,7 @@ var gameEnd = function () {
             clearInterval(intervalId);
             window.location.reload();
         }
-    }
-}
+    };
+};
 
 var intervalId = setInterval(gameLoop, 1000 / fps);
